@@ -1,150 +1,274 @@
 import os
-import time
+import json
+import numpy as np
+import faiss
 import logging
-from datetime import datetime
-from typing import Optional, Dict, Any
+from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
-from openai import OpenAI
+import google.generativeai as genai
 
 # Load environment variables
 load_dotenv()
-logging.basicConfig(level=logging.INFO)
+
+# Check for API key
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY not found in environment variables. Please set it in your .env file.")
+
+# Configure Gemini API
+genai.configure(api_key=GEMINI_API_KEY)
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 logger = logging.getLogger(__name__)
 
-# Define vector store ID
-vector_store_id = "phone_vector_store_50_20240508_083000"  # ⚠️ Sửa lại cho đúng ID vector store của bạn
+class PhoneChatbot:
+    def __init__(self, model_name: str = "text-embedding-004"):
+        """
+        Initialize the chatbot with Gemini embedding model.
+        """
+        self.model_name = model_name
+        self.index = None
+        self.documents = []
+        self.dimension = 768  # Dimension for text-embedding-004
+        self.model = genai.GenerativeModel('gemini-2.0-flash')
+        self.max_num_result = 20  # Maximum number of results to return
+        self.safety_settings = [
+            {
+                "category": "HARM_CATEGORY_HARASSMENT",
+                "threshold": "BLOCK_NONE"
+            },
+            {
+                "category": "HARM_CATEGORY_HATE_SPEECH",
+                "threshold": "BLOCK_NONE"
+            },
+            {
+                "category": "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                "threshold": "BLOCK_NONE"
+            },
+            {
+                "category": "HARM_CATEGORY_DANGEROUS_CONTENT",
+                "threshold": "BLOCK_NONE"
+            }
+        ]
 
-class ProductChatbot:
-    def __init__(self):
-        self.api_key = os.getenv("OPENAI_API_KEY")
-        if not self.api_key:
-            raise ValueError("Missing OPENAI_API_KEY in environment variables.")
-        self.client = OpenAI(api_key=self.api_key)
-        self.assistant = None
-        self.thread = None
-
-    def create_assistant(self) -> None:
+    def load_vector_store(self, store_id: str):
+        """
+        Load vector store from disk.
+        """
         try:
-            self.assistant = self.client.beta.assistants.create(
-                name="Product Assistant",
-                instructions=(
-                    "You are a helpful product assistant that answers questions about products. "
-                    "Use the provided knowledge to find accurate information about products. "
-                    "Always be clear, include prices in VND, and list features as bullet points when possible."
-                ),
-                model="gpt-4o",
-                tools=[{"type": "file_search"}],
-                tool_resources={"file_search": {"vector_store_ids": [vector_store_id]}}
-            )
-            logger.info("Assistant created successfully.")
+            index_path = f'vector_stores/{store_id}.index'
+            if not os.path.exists(index_path):
+                raise FileNotFoundError(f"Không tìm thấy file vector store: {index_path}")
+            
+            self.index = faiss.read_index(index_path)
+            if self.index.d != self.dimension:
+                raise ValueError(f"Kích thước vector ({self.index.d}) không khớp với kích thước mô hình ({self.dimension})")
+            
+            docs_path = f'vector_stores/{store_id}_documents.json'
+            if not os.path.exists(docs_path):
+                raise FileNotFoundError(f"Không tìm thấy file dữ liệu: {docs_path}")
+            
+            with open(docs_path, 'r', encoding='utf-8') as f:
+                self.documents = json.load(f)
+                
+            logger.info(f"Đã tải thành công {len(self.documents)} sản phẩm điện thoại")
+            
         except Exception as e:
-            logger.error(f"Failed to create assistant: {str(e)}")
+            logger.error(f"Lỗi khi tải vector store: {str(e)}")
             raise
 
-    def create_thread(self, initial_message: Optional[str] = None) -> None:
+    def get_embedding(self, text: str) -> Optional[np.ndarray]:
+        """
+        Get embedding for text using Gemini API.
+        """
         try:
-            messages = [{"role": "user", "content": initial_message}] if initial_message else []
-            self.thread = self.client.beta.threads.create(messages=messages)
-            logger.info("Thread created.")
+            result = genai.embed_content(
+                model=f"models/{self.model_name}",
+                content=text,
+                task_type="retrieval_document"
+            )
+            return np.array(result['embedding'])
         except Exception as e:
-            logger.error(f"Error creating thread: {str(e)}")
-            raise
+            logger.error(f"Lỗi khi tạo vector nhúng: {str(e)}")
+            return None
 
-    def send_message(self, message: str) -> Dict[str, Any]:
+    def search(self, query: str, top_k: int = None) -> List[Dict[str, Any]]:
+        """
+        Search the vector store with a query.
+        """
+        if not self.documents:
+            logger.warning("Chưa có dữ liệu điện thoại được tải")
+            return []
+
         try:
-            if not self.thread:
-                self.create_thread()
+            # Use max_num_result if top_k is not specified
+            if top_k is None:
+                top_k = self.max_num_result
 
-            self.client.beta.threads.messages.create(
-                thread_id=self.thread.id,
-                role="user",
-                content=message
-            )
+            # Check for color search
+            color_query = self._extract_color(query)
+            if color_query:
+                logger.info(f"Tìm kiếm điện thoại màu: {color_query}")
+                results = []
+                for doc in self.documents:
+                    metadata = doc['metadata']
+                    if 'color' in metadata and color_query.lower() in metadata['color'].lower():
+                        results.append({
+                            'document': doc,
+                            'score': 1.0
+                        })
+                return results[:top_k]
 
-            run = self.client.beta.threads.runs.create_and_poll(
-                thread_id=self.thread.id,
-                assistant_id=self.assistant.id
-            )
+            # If not a color search, use vector search
+            query_embedding = self.get_embedding(query)
+            if query_embedding is None:
+                logger.warning("Không thể tạo vector nhúng cho câu truy vấn")
+                return []
 
-            messages = list(self.client.beta.threads.messages.list(thread_id=self.thread.id, run_id=run.id))
-            if messages:
-                return {
-                    "success": True,
-                    "response": messages[0].content[0].text.value,
-                    "run_id": run.id
+            # Vector Search
+            distances, indices = self.index.search(np.array([query_embedding]).astype('float32'), top_k)
+            
+            results = []
+            for i, idx in enumerate(indices[0]):
+                if idx < len(self.documents):
+                    doc = self.documents[idx]
+                    score = float(1 / (1 + distances[0][i]))
+                    results.append({
+                        'document': doc,
+                        'score': score
+                    })
+            
+            return results
+
+        except Exception as e:
+            logger.error(f"Lỗi khi tìm kiếm: {str(e)}")
+            return []
+
+    def generate_response(self, query: str, context: List[Dict[str, Any]]) -> str:
+        """
+        Generate a response using Gemini model based on search results.
+        """
+        try:
+            if not context:
+                return "Xin lỗi, tôi không tìm thấy thông tin điện thoại phù hợp với yêu cầu của bạn."
+
+            # Prepare context for Gemini
+            context_text = f"Đây là thông tin của {len(context)} điện thoại liên quan:\n\n"
+            for i, result in enumerate(context, 1):
+                doc = result['document']
+                metadata = doc['metadata']
+                context_text += f"{i}. {metadata['title']}\n"
+                context_text += f"   Giá: {metadata['price']:,} VND\n"
+                context_text += f"   Thông số: {metadata['specs']}\n"
+                context_text += f"   Khuyến mãi: {metadata['promotion']}\n"
+                context_text += f"   Mô tả: {metadata['description']}\n\n"
+
+            # Create prompt for Gemini
+            prompt = f"""Bạn là một trợ lý mua sắm điện thoại thông minh. Hãy trả lời câu hỏi của người dùng dựa trên thông tin điện thoại được cung cấp.
+            Nếu thông tin không có trong dữ liệu, hãy trả lời lịch sự rằng không tìm thấy thông tin.
+            Hãy giữ câu trả lời ngắn gọn và tập trung vào thông tin quan trọng nhất.
+            Nếu có nhiều kết quả, hãy tổ chức thông tin một cách rõ ràng và dễ đọc.
+            Trả lời bằng tiếng Việt.
+
+            Thông tin điện thoại:
+            {context_text}
+
+            Câu hỏi của người dùng: {query}
+
+            Hãy trả lời một cách hữu ích và ngắn gọn:"""
+
+            # Generate response
+            response = self.model.generate_content(
+                prompt,
+                safety_settings=self.safety_settings,
+                generation_config={
+                    "temperature": 0.7,
+                    "top_p": 0.8,
+                    "top_k": 40,
+                    "max_output_tokens": 1024,
                 }
-            else:
-                return {"success": False, "error": "No response received."}
+            )
+            
+            if not response.text:
+                return "Xin lỗi, tôi không thể tạo câu trả lời. Vui lòng thử lại với cách diễn đạt khác."
+                
+            return response.text.strip()
+
         except Exception as e:
-            logger.error(f"Error in send_message: {str(e)}")
-            return {"success": False, "error": str(e)}
+            logger.error(f"Lỗi khi tạo câu trả lời: {str(e)}")
+            return "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu của bạn."
 
-def print_welcome():
-    print("\n" + "="*60)
-    print("🤖 Welcome to the Product Assistant Chatbot!")
-    print("="*60)
-    print("Ask me about phones, prices, features, promotions, etc.")
-    print("Type 'quit' to exit, 'help' for help, or 'clear' to clear screen.")
-    print("-"*60)
+    def chat(self, query: str) -> str:
+        """
+        Main chat function that combines search and response generation.
+        """
+        try:
+            if not query.strip():
+                return "Vui lòng nhập câu hỏi về điện thoại."
 
-def print_help():
-    print("\nAvailable commands:")
-    print("  help    - Show this help message")
-    print("  quit    - End the conversation")
-    print("  clear   - Clear the screen")
-    print("\nExample questions:")
-    print("  - What is the price of iPhone 13?")
-    print("  - Show me phones under 10 million VND")
-    print("  - What are the features of Samsung Galaxy A34?")
-    print("-"*60)
+            # Search for relevant information
+            search_results = self.search(query)
+            
+            # Generate response based on search results
+            response = self.generate_response(query, search_results)
+            return response
 
-def print_message(role: str, content: str):
-    timestamp = datetime.now().strftime("%H:%M:%S")
-    print(f"\n[{timestamp}] {'👤 You:' if role == 'user' else '🤖 Assistant:'}")
-    print("-"*60)
-    print(content.strip())
-    print("-"*60)
+        except Exception as e:
+            logger.error(f"Lỗi trong quá trình chat: {str(e)}")
+            return "Xin lỗi, đã xảy ra lỗi khi xử lý yêu cầu của bạn."
 
 def main():
+    # Initialize chatbot
+    chatbot = PhoneChatbot()
+    store_id = "phone_vector_store_50_gemini"
+    
     try:
-        print("Initializing chatbot...")
-        bot = ProductChatbot()
-        bot.create_assistant()
-        bot.create_thread()
-
-        print_welcome()
-
+        # Load vector store
+        print("Đang tải dữ liệu điện thoại...")
+        chatbot.load_vector_store(store_id)
+        print("\n=== Trợ Lý Mua Sắm Điện Thoại ===")
+        print("Tôi có thể giúp bạn tìm thông tin điện thoại, so sánh các mẫu và trả lời câu hỏi về thông số kỹ thuật.")
+        print("Gõ 'quit', 'exit' hoặc 'bye' để kết thúc cuộc trò chuyện.")
+        print("Gõ 'help' để xem hướng dẫn.")
+        
         while True:
-            user_input = input("\n👤 You: ").strip()
-            if not user_input:
-                continue
-
-            if user_input.lower() in ("quit", "exit"):
-                print("Goodbye! 👋")
+            try:
+                # Get user input
+                query = input("\nBạn: ").strip()
+                
+                # Check for quit command
+                if query.lower() in ['quit', 'exit', 'bye']:
+                    print("\nCảm ơn bạn đã sử dụng Trợ Lý Mua Sắm Điện Thoại. Tạm biệt!")
+                    break
+                
+                # Check for help command
+                if query.lower() == 'help':
+                    print("\nTôi có thể giúp bạn với:")
+                    print("- Tìm điện thoại theo thông số (ví dụ: 'Cho tôi xem điện thoại màn hình 4.7 inch')")
+                    print("- So sánh giá (ví dụ: 'Điện thoại nào dưới 5 triệu đồng?')")
+                    print("- Tìm kiếm tính năng (ví dụ: 'Điện thoại nào có camera tốt nhất?')")
+                    print("- Câu hỏi chung về điện thoại trong cơ sở dữ liệu")
+                    continue
+                
+                # Generate and print response
+                response = chatbot.chat(query)
+                print(f"\nTrợ lý: {response}")
+                
+            except KeyboardInterrupt:
+                print("\n\nTạm biệt!")
                 break
-            elif user_input.lower() == "help":
-                print_help()
-                continue
-            elif user_input.lower() == "clear":
-                os.system("cls" if os.name == "nt" else "clear")
-                print_welcome()
-                continue
-
-            print("\n🤖 Assistant is typing", end="", flush=True)
-            for _ in range(3):
-                time.sleep(0.5)
-                print(".", end="", flush=True)
-            print()
-
-            response = bot.send_message(user_input)
-            if response["success"]:
-                print_message("assistant", response["response"])
-            else:
-                print_message("assistant", f"Error: {response['error']}")
-
+            except Exception as e:
+                logger.error(f"Lỗi trong vòng lặp chat: {str(e)}")
+                print("\nĐã xảy ra lỗi. Vui lòng thử lại.")
+                
     except Exception as e:
-        logger.error(f"Fatal error: {str(e)}")
-        print(f"An error occurred: {str(e)}")
+        logger.error(f"Lỗi nghiêm trọng: {str(e)}")
+        print(f"\nLỗi: {str(e)}")
+        print("Vui lòng kiểm tra cấu hình và thử lại.")
 
 if __name__ == "__main__":
     main()
