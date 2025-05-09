@@ -1,0 +1,652 @@
+[
+  {
+    "text": "iPhone SE 2022 - Chip A15 Bionic, 4.7 inch, 5G - Color: Blue - Price: 18655692 VND - Description: Miễn phí giao hàng toàn quốc",
+    "metadata": {
+      "id": 1,
+      "title": "iPhone SE 2022",
+      "url": NaN,
+      "promotion": "Giảm 2 triệu khi thu cũ đổi mới",
+      "specs": "Chip A15 Bionic, 4.7 inch, 5G",
+      "color": "Blue",
+      "price": 18655692,
+      "description": "Miễn phí giao hàng toàn quốc"
+    }
+  },
+  {
+    "text": "iPhone 11 - Chip A13 Bionic, 6.1 inch, 4G - Color: Blue - Price: 36188677 VND - Description: Hỗ trợ trả góp 0% lãi suất qua thẻ",
+    "metadata": {
+      "id": 2,
+      "title": "iPhone 11",
+      "url": NaN,
+      "promotion": "Trả góp 0%",
+      "specs": "Chip A13 Bionic, 6.1 inch, 4G",
+      "color": "Blue",
+      "price": 36188677,
+      "description": "Hỗ trợ trả góp 0% lãi suất qua thẻ"
+    }
+  },
+  {
+    "text": "iPhone 11 - Chip A13 Bionic, 6.1 inch, 4G - Color: Red - Price: 17683034 VND - Description: Giảm thêm 500K khi trả góp qua ngân hàng",
+    "metadata": {
+      "id": 3,
+      "title": "iPhone 11",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 500K",
+      "specs": "Chip A13 Bionic, 6.1 inch, 4G",
+      "color": "Red",
+      "price": 17683034,
+      "description": "Giảm thêm 500K khi trả góp qua ngân hàng"
+    }
+  },
+  {
+    "text": "iPhone 14 Pro Max - Chip A16 Bionic, 6.7 inch, 5G - Color: Pink - Price: 10460650 VND - Description: Giảm thêm 500K khi trả góp qua ngân hàng",
+    "metadata": {
+      "id": 4,
+      "title": "iPhone 14 Pro Max",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A16 Bionic, 6.7 inch, 5G",
+      "color": "Pink",
+      "price": 10460650,
+      "description": "Giảm thêm 500K khi trả góp qua ngân hàng"
+    }
+  },
+  {
+    "text": "iPhone 14 Pro - Chip A16 Bionic, 6.1 inch, 5G - Color: Starlight - Price: 38756469 VND - Description: Hỗ trợ trả góp 0% lãi suất qua thẻ",
+    "metadata": {
+      "id": 5,
+      "title": "iPhone 14 Pro",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A16 Bionic, 6.1 inch, 5G",
+      "color": "Starlight",
+      "price": 38756469,
+      "description": "Hỗ trợ trả góp 0% lãi suất qua thẻ"
+    }
+  },
+  {
+    "text": "iPhone 11 - Chip A13 Bionic, 6.1 inch, 4G - Color: Red - Price: 22746469 VND - Description: Mua kèm phụ kiện giảm 10%",
+    "metadata": {
+      "id": 6,
+      "title": "iPhone 11",
+      "url": NaN,
+      "promotion": "Tặng kèm ốp lưng",
+      "specs": "Chip A13 Bionic, 6.1 inch, 4G",
+      "color": "Red",
+      "price": 22746469,
+      "description": "Mua kèm phụ kiện giảm 10%"
+    }
+  },
+  {
+    "text": "iPhone 15 - Chip A16 Bionic, 6.1 inch, 5G - Color: Blue - Price: 21087254 VND - Description: Giảm thêm 1 triệu khi thanh toán qua ví điện tử",
+    "metadata": {
+      "id": 7,
+      "title": "iPhone 15",
+      "url": NaN,
+      "promotion": "Giảm 2 triệu khi thu cũ đổi mới",
+      "specs": "Chip A16 Bionic, 6.1 inch, 5G",
+      "color": "Blue",
+      "price": 21087254,
+      "description": "Giảm thêm 1 triệu khi thanh toán qua ví điện tử"
+    }
+  },
+  {
+    "text": "iPhone 13 - Chip A15 Bionic, 6.1 inch, 5G - Color: Red - Price: 14807779 VND - Description: Giảm 5% cho khách hàng thân thiết",
+    "metadata": {
+      "id": 8,
+      "title": "iPhone 13",
+      "url": NaN,
+      "promotion": "Giảm 1 triệu cho học sinh - sinh viên",
+      "specs": "Chip A15 Bionic, 6.1 inch, 5G",
+      "color": "Red",
+      "price": 14807779,
+      "description": "Giảm 5% cho khách hàng thân thiết"
+    }
+  },
+  {
+    "text": "iPhone SE 2022 - Chip A15 Bionic, 4.7 inch, 5G - Color: White - Price: 39144709 VND - Description: Giảm thêm 500K khi trả góp qua ngân hàng",
+    "metadata": {
+      "id": 9,
+      "title": "iPhone SE 2022",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A15 Bionic, 4.7 inch, 5G",
+      "color": "White",
+      "price": 39144709,
+      "description": "Giảm thêm 500K khi trả góp qua ngân hàng"
+    }
+  },
+  {
+    "text": "iPhone SE 2022 - Chip A15 Bionic, 4.7 inch, 5G - Color: Purple - Price: 31237701 VND - Description: Thanh toán VNPAY giảm ngay 300K",
+    "metadata": {
+      "id": 10,
+      "title": "iPhone SE 2022",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 500K",
+      "specs": "Chip A15 Bionic, 4.7 inch, 5G",
+      "color": "Purple",
+      "price": 31237701,
+      "description": "Thanh toán VNPAY giảm ngay 300K"
+    }
+  },
+  {
+    "text": "iPhone SE 2022 - Chip A15 Bionic, 4.7 inch, 5G - Color: Purple - Price: 25283222 VND - Description: Tặng thêm bảo hành 1 năm khi mua online",
+    "metadata": {
+      "id": 11,
+      "title": "iPhone SE 2022",
+      "url": NaN,
+      "promotion": "Giảm 1 triệu cho học sinh - sinh viên",
+      "specs": "Chip A15 Bionic, 4.7 inch, 5G",
+      "color": "Purple",
+      "price": 25283222,
+      "description": "Tặng thêm bảo hành 1 năm khi mua online"
+    }
+  },
+  {
+    "text": "iPhone 15 Pro - Chip A17 Pro, 6.1 inch, 5G - Color: Red - Price: 13186739 VND - Description: Tặng thêm bảo hành 1 năm khi mua online",
+    "metadata": {
+      "id": 12,
+      "title": "iPhone 15 Pro",
+      "url": NaN,
+      "promotion": "Giảm 500K",
+      "specs": "Chip A17 Pro, 6.1 inch, 5G",
+      "color": "Red",
+      "price": 13186739,
+      "description": "Tặng thêm bảo hành 1 năm khi mua online"
+    }
+  },
+  {
+    "text": "iPhone 15 - Chip A16 Bionic, 6.1 inch, 5G - Color: White - Price: 12385961 VND - Description: Giảm thêm 1 triệu khi thanh toán qua ví điện tử",
+    "metadata": {
+      "id": 13,
+      "title": "iPhone 15",
+      "url": NaN,
+      "promotion": "Giảm 2 triệu khi thu cũ đổi mới",
+      "specs": "Chip A16 Bionic, 6.1 inch, 5G",
+      "color": "White",
+      "price": 12385961,
+      "description": "Giảm thêm 1 triệu khi thanh toán qua ví điện tử"
+    }
+  },
+  {
+    "text": "iPhone 11 - Chip A13 Bionic, 6.1 inch, 4G - Color: Yellow - Price: 29437796 VND - Description: Miễn phí giao hàng toàn quốc",
+    "metadata": {
+      "id": 14,
+      "title": "iPhone 11",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A13 Bionic, 6.1 inch, 4G",
+      "color": "Yellow",
+      "price": 29437796,
+      "description": "Miễn phí giao hàng toàn quốc"
+    }
+  },
+  {
+    "text": "iPhone 13 - Chip A15 Bionic, 6.1 inch, 5G - Color: Purple - Price: 32077577 VND - Description: Giảm thêm 1 triệu khi thanh toán qua ví điện tử",
+    "metadata": {
+      "id": 15,
+      "title": "iPhone 13",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 500K",
+      "specs": "Chip A15 Bionic, 6.1 inch, 5G",
+      "color": "Purple",
+      "price": 32077577,
+      "description": "Giảm thêm 1 triệu khi thanh toán qua ví điện tử"
+    }
+  },
+  {
+    "text": "iPhone 14 Plus - Chip A15 Bionic, 6.7 inch, 5G - Color: Green - Price: 10186207 VND - Description: Mua kèm phụ kiện giảm 10%",
+    "metadata": {
+      "id": 16,
+      "title": "iPhone 14 Plus",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A15 Bionic, 6.7 inch, 5G",
+      "color": "Green",
+      "price": 10186207,
+      "description": "Mua kèm phụ kiện giảm 10%"
+    }
+  },
+  {
+    "text": "iPhone 13 mini - Chip A15 Bionic, 5.4 inch, 5G - Color: Blue - Price: 23794817 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 17,
+      "title": "iPhone 13 mini",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A15 Bionic, 5.4 inch, 5G",
+      "color": "Blue",
+      "price": 23794817,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 12 - Chip A14 Bionic, 6.1 inch, 5G - Color: Yellow - Price: 32769437 VND - Description: Giảm 5% cho khách hàng thân thiết",
+    "metadata": {
+      "id": 18,
+      "title": "iPhone 12",
+      "url": NaN,
+      "promotion": "Tặng kèm ốp lưng",
+      "specs": "Chip A14 Bionic, 6.1 inch, 5G",
+      "color": "Yellow",
+      "price": 32769437,
+      "description": "Giảm 5% cho khách hàng thân thiết"
+    }
+  },
+  {
+    "text": "iPhone 13 mini - Chip A15 Bionic, 5.4 inch, 5G - Color: Green - Price: 28605630 VND - Description: Thanh toán VNPAY giảm ngay 300K",
+    "metadata": {
+      "id": 19,
+      "title": "iPhone 13 mini",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A15 Bionic, 5.4 inch, 5G",
+      "color": "Green",
+      "price": 28605630,
+      "description": "Thanh toán VNPAY giảm ngay 300K"
+    }
+  },
+  {
+    "text": "iPhone 12 - Chip A14 Bionic, 6.1 inch, 5G - Color: Green - Price: 38669628 VND - Description: Ưu đãi khi thanh toán bằng thẻ tín dụng",
+    "metadata": {
+      "id": 20,
+      "title": "iPhone 12",
+      "url": NaN,
+      "promotion": "Giảm 1 triệu cho học sinh - sinh viên",
+      "specs": "Chip A14 Bionic, 6.1 inch, 5G",
+      "color": "Green",
+      "price": 38669628,
+      "description": "Ưu đãi khi thanh toán bằng thẻ tín dụng"
+    }
+  },
+  {
+    "text": "iPhone 14 Pro Max - Chip A16 Bionic, 6.7 inch, 5G - Color: Green - Price: 23908130 VND - Description: Mua kèm phụ kiện giảm 10%",
+    "metadata": {
+      "id": 21,
+      "title": "iPhone 14 Pro Max",
+      "url": NaN,
+      "promotion": "Tặng kèm ốp lưng",
+      "specs": "Chip A16 Bionic, 6.7 inch, 5G",
+      "color": "Green",
+      "price": 23908130,
+      "description": "Mua kèm phụ kiện giảm 10%"
+    }
+  },
+  {
+    "text": "iPhone 13 - Chip A15 Bionic, 6.1 inch, 5G - Color: Pink - Price: 23824145 VND - Description: Hỗ trợ trả góp 0% lãi suất qua thẻ",
+    "metadata": {
+      "id": 22,
+      "title": "iPhone 13",
+      "url": NaN,
+      "promotion": "Giảm 500K",
+      "specs": "Chip A15 Bionic, 6.1 inch, 5G",
+      "color": "Pink",
+      "price": 23824145,
+      "description": "Hỗ trợ trả góp 0% lãi suất qua thẻ"
+    }
+  },
+  {
+    "text": "iPhone 11 - Chip A13 Bionic, 6.1 inch, 4G - Color: Pink - Price: 10811608 VND - Description: Tặng thêm bảo hành 1 năm khi mua online",
+    "metadata": {
+      "id": 23,
+      "title": "iPhone 11",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A13 Bionic, 6.1 inch, 4G",
+      "color": "Pink",
+      "price": 10811608,
+      "description": "Tặng thêm bảo hành 1 năm khi mua online"
+    }
+  },
+  {
+    "text": "iPhone 14 Plus - Chip A15 Bionic, 6.7 inch, 5G - Color: Blue - Price: 19012686 VND - Description: Giảm thêm 500K khi trả góp qua ngân hàng",
+    "metadata": {
+      "id": 24,
+      "title": "iPhone 14 Plus",
+      "url": NaN,
+      "promotion": "Giảm 2 triệu khi thu cũ đổi mới",
+      "specs": "Chip A15 Bionic, 6.7 inch, 5G",
+      "color": "Blue",
+      "price": 19012686,
+      "description": "Giảm thêm 500K khi trả góp qua ngân hàng"
+    }
+  },
+  {
+    "text": "iPhone 14 Plus - Chip A15 Bionic, 6.7 inch, 5G - Color: Green - Price: 24784645 VND - Description: Giảm thêm 500K khi trả góp qua ngân hàng",
+    "metadata": {
+      "id": 25,
+      "title": "iPhone 14 Plus",
+      "url": NaN,
+      "promotion": "Giảm 2 triệu khi thu cũ đổi mới",
+      "specs": "Chip A15 Bionic, 6.7 inch, 5G",
+      "color": "Green",
+      "price": 24784645,
+      "description": "Giảm thêm 500K khi trả góp qua ngân hàng"
+    }
+  },
+  {
+    "text": "iPhone 15 Pro Max - Chip A17 Pro, 6.7 inch, 5G - Color: Starlight - Price: 24288557 VND - Description: Giảm thêm 1 triệu khi thanh toán qua ví điện tử",
+    "metadata": {
+      "id": 26,
+      "title": "iPhone 15 Pro Max",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A17 Pro, 6.7 inch, 5G",
+      "color": "Starlight",
+      "price": 24288557,
+      "description": "Giảm thêm 1 triệu khi thanh toán qua ví điện tử"
+    }
+  },
+  {
+    "text": "iPhone 15 Plus - Chip A16 Bionic, 6.7 inch, 5G - Color: Blue - Price: 12894602 VND - Description: Miễn phí giao hàng toàn quốc",
+    "metadata": {
+      "id": 27,
+      "title": "iPhone 15 Plus",
+      "url": NaN,
+      "promotion": "Giảm 1 triệu cho học sinh - sinh viên",
+      "specs": "Chip A16 Bionic, 6.7 inch, 5G",
+      "color": "Blue",
+      "price": 12894602,
+      "description": "Miễn phí giao hàng toàn quốc"
+    }
+  },
+  {
+    "text": "iPhone SE 2022 - Chip A15 Bionic, 4.7 inch, 5G - Color: Blue - Price: 15366273 VND - Description: Giảm thêm 500K khi trả góp qua ngân hàng",
+    "metadata": {
+      "id": 28,
+      "title": "iPhone SE 2022",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A15 Bionic, 4.7 inch, 5G",
+      "color": "Blue",
+      "price": 15366273,
+      "description": "Giảm thêm 500K khi trả góp qua ngân hàng"
+    }
+  },
+  {
+    "text": "iPhone 15 Plus - Chip A16 Bionic, 6.7 inch, 5G - Color: Starlight - Price: 39678364 VND - Description: Mua kèm phụ kiện giảm 10%",
+    "metadata": {
+      "id": 29,
+      "title": "iPhone 15 Plus",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A16 Bionic, 6.7 inch, 5G",
+      "color": "Starlight",
+      "price": 39678364,
+      "description": "Mua kèm phụ kiện giảm 10%"
+    }
+  },
+  {
+    "text": "iPhone 15 Pro Max - Chip A17 Pro, 6.7 inch, 5G - Color: Purple - Price: 39691065 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 30,
+      "title": "iPhone 15 Pro Max",
+      "url": NaN,
+      "promotion": "Giảm 500K",
+      "specs": "Chip A17 Pro, 6.7 inch, 5G",
+      "color": "Purple",
+      "price": 39691065,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 15 Pro Max - Chip A17 Pro, 6.7 inch, 5G - Color: Pink - Price: 28264903 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 31,
+      "title": "iPhone 15 Pro Max",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A17 Pro, 6.7 inch, 5G",
+      "color": "Pink",
+      "price": 28264903,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 14 Pro - Chip A16 Bionic, 6.1 inch, 5G - Color: Purple - Price: 10173789 VND - Description: Ưu đãi khi thanh toán bằng thẻ tín dụng",
+    "metadata": {
+      "id": 32,
+      "title": "iPhone 14 Pro",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A16 Bionic, 6.1 inch, 5G",
+      "color": "Purple",
+      "price": 10173789,
+      "description": "Ưu đãi khi thanh toán bằng thẻ tín dụng"
+    }
+  },
+  {
+    "text": "iPhone 15 - Chip A16 Bionic, 6.1 inch, 5G - Color: Green - Price: 14928457 VND - Description: Thanh toán VNPAY giảm ngay 300K",
+    "metadata": {
+      "id": 33,
+      "title": "iPhone 15",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A16 Bionic, 6.1 inch, 5G",
+      "color": "Green",
+      "price": 14928457,
+      "description": "Thanh toán VNPAY giảm ngay 300K"
+    }
+  },
+  {
+    "text": "iPhone 15 Plus - Chip A16 Bionic, 6.7 inch, 5G - Color: Black - Price: 17996793 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 34,
+      "title": "iPhone 15 Plus",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A16 Bionic, 6.7 inch, 5G",
+      "color": "Black",
+      "price": 17996793,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 14 Plus - Chip A15 Bionic, 6.7 inch, 5G - Color: Yellow - Price: 33733518 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 35,
+      "title": "iPhone 14 Plus",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A15 Bionic, 6.7 inch, 5G",
+      "color": "Yellow",
+      "price": 33733518,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 11 - Chip A13 Bionic, 6.1 inch, 4G - Color: Black - Price: 19002640 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 36,
+      "title": "iPhone 11",
+      "url": NaN,
+      "promotion": "Giảm 2 triệu khi thu cũ đổi mới",
+      "specs": "Chip A13 Bionic, 6.1 inch, 4G",
+      "color": "Black",
+      "price": 19002640,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 15 Pro Max - Chip A17 Pro, 6.7 inch, 5G - Color: Black - Price: 14751999 VND - Description: Giảm 5% cho khách hàng thân thiết",
+    "metadata": {
+      "id": 37,
+      "title": "iPhone 15 Pro Max",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A17 Pro, 6.7 inch, 5G",
+      "color": "Black",
+      "price": 14751999,
+      "description": "Giảm 5% cho khách hàng thân thiết"
+    }
+  },
+  {
+    "text": "iPhone 13 - Chip A15 Bionic, 6.1 inch, 5G - Color: Pink - Price: 11352217 VND - Description: Tặng thêm bảo hành 1 năm khi mua online",
+    "metadata": {
+      "id": 38,
+      "title": "iPhone 13",
+      "url": NaN,
+      "promotion": "Giảm 500K",
+      "specs": "Chip A15 Bionic, 6.1 inch, 5G",
+      "color": "Pink",
+      "price": 11352217,
+      "description": "Tặng thêm bảo hành 1 năm khi mua online"
+    }
+  },
+  {
+    "text": "iPhone 12 - Chip A14 Bionic, 6.1 inch, 5G - Color: Midnight - Price: 17681879 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 39,
+      "title": "iPhone 12",
+      "url": NaN,
+      "promotion": "Trả góp 0%",
+      "specs": "Chip A14 Bionic, 6.1 inch, 5G",
+      "color": "Midnight",
+      "price": 17681879,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 14 Plus - Chip A15 Bionic, 6.7 inch, 5G - Color: Pink - Price: 25945828 VND - Description: Hỗ trợ trả góp 0% lãi suất qua thẻ",
+    "metadata": {
+      "id": 40,
+      "title": "iPhone 14 Plus",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A15 Bionic, 6.7 inch, 5G",
+      "color": "Pink",
+      "price": 25945828,
+      "description": "Hỗ trợ trả góp 0% lãi suất qua thẻ"
+    }
+  },
+  {
+    "text": "iPhone 14 Pro Max - Chip A16 Bionic, 6.7 inch, 5G - Color: Black - Price: 28637016 VND - Description: Miễn phí giao hàng toàn quốc",
+    "metadata": {
+      "id": 41,
+      "title": "iPhone 14 Pro Max",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A16 Bionic, 6.7 inch, 5G",
+      "color": "Black",
+      "price": 28637016,
+      "description": "Miễn phí giao hàng toàn quốc"
+    }
+  },
+  {
+    "text": "iPhone SE 2022 - Chip A15 Bionic, 4.7 inch, 5G - Color: Midnight - Price: 38538351 VND - Description: Mua kèm phụ kiện giảm 10%",
+    "metadata": {
+      "id": 42,
+      "title": "iPhone SE 2022",
+      "url": NaN,
+      "promotion": "Tặng kèm ốp lưng",
+      "specs": "Chip A15 Bionic, 4.7 inch, 5G",
+      "color": "Midnight",
+      "price": 38538351,
+      "description": "Mua kèm phụ kiện giảm 10%"
+    }
+  },
+  {
+    "text": "iPhone 13 mini - Chip A15 Bionic, 5.4 inch, 5G - Color: Green - Price: 26426849 VND - Description: Miễn phí giao hàng toàn quốc",
+    "metadata": {
+      "id": 43,
+      "title": "iPhone 13 mini",
+      "url": NaN,
+      "promotion": "Giảm 2 triệu khi thu cũ đổi mới",
+      "specs": "Chip A15 Bionic, 5.4 inch, 5G",
+      "color": "Green",
+      "price": 26426849,
+      "description": "Miễn phí giao hàng toàn quốc"
+    }
+  },
+  {
+    "text": "iPhone 14 Plus - Chip A15 Bionic, 6.7 inch, 5G - Color: Green - Price: 26595374 VND - Description: Hỗ trợ trả góp 0% lãi suất qua thẻ",
+    "metadata": {
+      "id": 44,
+      "title": "iPhone 14 Plus",
+      "url": NaN,
+      "promotion": "Giảm giá trực tiếp 1 triệu",
+      "specs": "Chip A15 Bionic, 6.7 inch, 5G",
+      "color": "Green",
+      "price": 26595374,
+      "description": "Hỗ trợ trả góp 0% lãi suất qua thẻ"
+    }
+  },
+  {
+    "text": "iPhone 12 - Chip A14 Bionic, 6.1 inch, 5G - Color: White - Price: 12030254 VND - Description: Miễn phí giao hàng toàn quốc",
+    "metadata": {
+      "id": 45,
+      "title": "iPhone 12",
+      "url": NaN,
+      "promotion": "Tặng kèm ốp lưng",
+      "specs": "Chip A14 Bionic, 6.1 inch, 5G",
+      "color": "White",
+      "price": 12030254,
+      "description": "Miễn phí giao hàng toàn quốc"
+    }
+  },
+  {
+    "text": "iPhone 15 - Chip A16 Bionic, 6.1 inch, 5G - Color: Black - Price: 29270093 VND - Description: Giảm 5% cho khách hàng thân thiết",
+    "metadata": {
+      "id": 46,
+      "title": "iPhone 15",
+      "url": NaN,
+      "promotion": "Tặng phiếu mua hàng 300K",
+      "specs": "Chip A16 Bionic, 6.1 inch, 5G",
+      "color": "Black",
+      "price": 29270093,
+      "description": "Giảm 5% cho khách hàng thân thiết"
+    }
+  },
+  {
+    "text": "iPhone 15 Pro Max - Chip A17 Pro, 6.7 inch, 5G - Color: Purple - Price: 32441638 VND - Description: Giảm 5% cho khách hàng thân thiết",
+    "metadata": {
+      "id": 47,
+      "title": "iPhone 15 Pro Max",
+      "url": NaN,
+      "promotion": "Giảm 500K",
+      "specs": "Chip A17 Pro, 6.7 inch, 5G",
+      "color": "Purple",
+      "price": 32441638,
+      "description": "Giảm 5% cho khách hàng thân thiết"
+    }
+  },
+  {
+    "text": "iPhone 14 Plus - Chip A15 Bionic, 6.7 inch, 5G - Color: Red - Price: 35798094 VND - Description: Giảm thêm 500K khi trả góp qua ngân hàng",
+    "metadata": {
+      "id": 48,
+      "title": "iPhone 14 Plus",
+      "url": NaN,
+      "promotion": "Trả góp 0%",
+      "specs": "Chip A15 Bionic, 6.7 inch, 5G",
+      "color": "Red",
+      "price": 35798094,
+      "description": "Giảm thêm 500K khi trả góp qua ngân hàng"
+    }
+  },
+  {
+    "text": "iPhone 11 - Chip A13 Bionic, 6.1 inch, 4G - Color: Yellow - Price: 36990998 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 49,
+      "title": "iPhone 11",
+      "url": NaN,
+      "promotion": "Giảm 1 triệu cho học sinh - sinh viên",
+      "specs": "Chip A13 Bionic, 6.1 inch, 4G",
+      "color": "Yellow",
+      "price": 36990998,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  },
+  {
+    "text": "iPhone 15 - Chip A16 Bionic, 6.1 inch, 5G - Color: Purple - Price: 33698921 VND - Description: Tặng voucher mua hàng lần sau",
+    "metadata": {
+      "id": 50,
+      "title": "iPhone 15",
+      "url": NaN,
+      "promotion": "Tặng kèm ốp lưng",
+      "specs": "Chip A16 Bionic, 6.1 inch, 5G",
+      "color": "Purple",
+      "price": 33698921,
+      "description": "Tặng voucher mua hàng lần sau"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "text": "Artificial Intelligence (AI) is the simulation of human intelligence by machines that are programmed to think and learn like humans.",
+        "metadata": {
+            "title": "AI Introduction",
+            "category": "Technology",
+            "source": "AI Basics"
+        }
+    },
+    {
+        "text": "Machine Learning is a subset of AI that focuses on developing systems that can learn from and make decisions based on data.",
+        "metadata": {
+            "title": "Machine Learning Basics",
+            "category": "Technology",
+            "source": "ML Fundamentals"
+        }
+    },
+    {
+        "text": "Natural Language Processing (NLP) is a branch of AI that helps computers understand, interpret, and manipulate human language.",
+        "metadata": {
+            "title": "NLP Overview",
+            "category": "Technology",
+            "source": "Language Processing"
+        }
+    }
+] 
