@@ -148,6 +148,43 @@ class PhoneChatbot:
             logger.error(f"Lỗi khi tìm kiếm: {str(e)}")
             return []
 
+    def _extract_color(self, query: str) -> Optional[str]:
+        """
+        Extract color from query text.
+        Returns the color if found, None otherwise.
+        """
+        try:
+            # Convert query to lowercase for easier matching
+            query = query.lower()
+            
+            # Common color mappings
+            color_mappings = {
+                'đen': 'Đen',
+                'trắng': 'Trắng',
+                'xanh': 'Xanh',
+                'xanh dương': 'Xanh dương',
+                'xanh lá': 'Xanh lá',
+                'đỏ': 'Đỏ',
+                'hồng': 'Hồng',
+                'tím': 'Tím',
+                'vàng': 'Vàng',
+                'bạc': 'Bạc',
+                'xám': 'Xám',
+                'nâu': 'Nâu',
+                'cam': 'Cam'
+            }
+            
+            # Check for color mentions
+            for color_key, color_value in color_mappings.items():
+                if color_key in query:
+                    return color_value
+            
+            return None
+            
+        except Exception as e:
+            logger.error(f"Lỗi khi trích xuất màu sắc: {str(e)}")
+            return None
+
     def generate_response(self, query: str, context: List[Dict[str, Any]]) -> str:
         """
         Generate a response using Gemini model based on search results.
@@ -163,6 +200,8 @@ class PhoneChatbot:
                 metadata = doc['metadata']
                 context_text += f"{i}. {metadata['title']}\n"
                 context_text += f"   Giá: {metadata['price']:,} VND\n"
+                if 'color' in metadata:
+                    context_text += f"   Màu sắc: {metadata['color']}\n"
                 context_text += f"   Thông số: {metadata['specs']}\n"
                 context_text += f"   Khuyến mãi: {metadata['promotion']}\n"
                 context_text += f"   Mô tả: {metadata['description']}\n\n"

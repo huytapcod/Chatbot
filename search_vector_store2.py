@@ -34,7 +34,7 @@ class VectorStoreSearcher:
         self.documents = []
         self.dimension = 768  # Dimension for text-embedding-004
         self.executor = ThreadPoolExecutor(max_workers=max_workers)
-        self.model = genai.GenerativeModel('gemini-pro')
+        self.model = genai.GenerativeModel('gemini-2.0-flash')
 
     def load_vector_store(self, store_id: str):
         """
